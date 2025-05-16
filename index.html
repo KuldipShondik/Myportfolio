@@ -20,55 +20,85 @@
     }
 
     body {
-      background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
-      color: #111;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      color: #eee;
       line-height: 1.6;
-      padding: 1rem;
       overflow-x: hidden;
     }
 
     nav {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 2rem;
-      margin-bottom: 2rem;
-      animation: fadeIn 1s ease-in;
+      padding: 1rem 2rem;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
+      color: #fff;
       text-decoration: none;
-      color: #222;
       font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      transition: background 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      background: #dcdcdc;
+      color: #4bb0ff;
     }
 
     header {
-      background: linear-gradient(145deg, #1a1a1a, #000000);
-      color: #fff;
-      padding: 3rem 1rem;
-      text-align: center;
-      border-radius: 20px;
-      box-shadow: 8px 8px 20px #bfbfbf, -8px -8px 20px #ffffff;
-      animation: slideInTop 1s ease-out;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 2rem;
+      background: url('https://raw.githubusercontent.com/fox-knight/Final-draft/main/assets/bg.png') no-repeat center center/cover;
     }
 
-    header h1 {
+    .intro-text {
+      flex: 1;
+      max-width: 60%;
+    }
+
+    .intro-text h1 {
       font-size: 3rem;
-      font-weight: 800;
-      animation: fadeIn 2s ease-in;
+      color: #4bb0ff;
     }
 
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.3rem;
+    .intro-text p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
       color: #ccc;
-      animation: fadeIn 2s ease-in 0.5s;
+    }
+
+    .intro-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .intro-image img {
+      max-width: 300px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .social-icons a {
+      color: #aaa;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+      transform: scale(1.2);
     }
 
     section {
@@ -79,107 +109,39 @@
 
     h2 {
       font-size: 2rem;
-      color: #222;
+      color: #fff;
       margin-bottom: 1.5rem;
       text-align: center;
-      position: relative;
-      animation: fadeInUp 1s ease-out;
     }
 
     .card {
-      background: #f0f0f0;
+      background: #1f1f1f;
       padding: 1.5rem;
       margin-bottom: 2rem;
       border-radius: 16px;
-      box-shadow: 6px 6px 18px #bfbfbf, -6px -6px 18px #ffffff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: zoomIn 1s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 4px 4px 12px #b0b0b0, -4px -4px 12px #ffffff;
+      box-shadow: 8px 8px 16px #000, -8px -8px 16px #2a2a2a;
     }
 
     .card h3 {
       margin-bottom: 0.75rem;
       font-size: 1.5rem;
-      color: #333;
+      color: #fff;
     }
 
     a {
-      color: #0077cc;
+      color: #80cfff;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #005fa3;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      font-size: 1.8rem;
-      margin-top: 1rem;
-    }
-
-    .social-icons a {
-      color: #333;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #0077cc;
-      transform: scale(1.2);
+      color: #4bb0ff;
     }
 
     footer {
       text-align: center;
       margin-top: 4rem;
       font-size: 0.9rem;
-      color: #666;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    #topBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 1.5rem;
-      background: #333;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-      display: none;
-    }
-
-    #topBtn:hover {
-      background: #555;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideInTop {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      color: #888;
     }
   </style>
 </head>
@@ -193,8 +155,18 @@
   </nav>
 
   <header>
-    <h1>Kuldip Saw</h1>
-    <p>Backend Enthusiast | Java & Python Developer | B.Tech @ SOA ITER</p>
+    <div class="intro-text">
+      <h1>Hi, It's <span style="color:#4bb0ff">Kuldip</span></h1>
+      <p>I am a backend development enthusiast who enjoys crafting user-centric solutions with Java and Python. I value clean, efficient code and love transforming ideas into scalable applications. Dive into my portfolio to explore more about my journey and aspirations!</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/kuldip_shondik" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/kuldip-saw-38bb14362" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/kuldipshondik" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="intro-image">
+      <img src="kuldip.jpg" alt="Kuldip's Avatar">
+    </div>
   </header>
 
   <section id="about">
@@ -210,47 +182,57 @@
     <h2>Projects</h2>
     <div class="card">
       <h3>Portfolio Website</h3>
-      <p>A clean, responsive personal site built using only HTML and CSS. This very site showcases my skills, background, and projects.</p>
+      <p>A dark-themed, 3D-styled personal site built using only HTML and CSS. This very site showcases my skills, background, and projects.</p>
       <a href="https://github.com/kuldipshondik" target="_blank">View on GitHub</a>
     </div>
     <div class="card">
-      <h3>Simple Java Backend App</h3>
-      <p>A basic RESTful API backend built using Java, demonstrating CRUD operations and clean code structure.</p>
+      <h3>Up Comming</h3>
+      <p>Something great cooking with team Tech Rediva.</p>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">
-      <p>Languages: Java, Python, HTML, CSS</p>
-      <p>Tools: Git, GitHub, VS Code</p>
+      <p>Languages: Java, Python, HTML, CSS, JavaScript</p>
+      <p>Tools: GitHub, VS Code, IDLE</p>
+      <p>Soft Skills: Problem Solving, Time Management, Collaboration</p>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:kuldipshondik@gmail.com">kuldipshondik@gmail.com</a></p>
-      <div class="social-icons">
-        <a href="https://instagram.com/kuldip_shondik" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/kuldip-saw-38bb14362" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/kuldipshondik" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <!-- Instagram -->
+        <a href="https://instagram.com/kuldip_shondik" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+               alt="Instagram" style="height: 40px;">
+        </a>
+      
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/kuldip-saw-38bb14362" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+               alt="LinkedIn" style="height: 40px;">
+        </a>
+      
+        <!-- Gmail -->
+        <a href="mailto:kuldipshondik@gmail.com">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" 
+               alt="Gmail" style="height: 40px;">
+        </a>
+      
+        <!-- GitHub -->
+        <a href="https://github.com/kuldipshondik" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+               alt="GitHub" style="height: 40px;">
+        </a>
+        <p>Feel free to connect with me on the platforms above.</p>
       </div>
-    </div>
   </section>
 
   <footer>
-    <p>© 2025 Kuldip Saw. Built with love and HTML/CSS in a 3D style.</p>
+    <p>© 2025 Kuldip Saw. Built with curiosity , code & AI.</p>
   </footer>
-
-  <div id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
-
-  <script>
-    const topBtn = document.getElementById("topBtn");
-    window.onscroll = function () {
-      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-  </script>
 </body>
 
 </html>
